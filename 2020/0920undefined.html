@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="navigator对象, HTML-CSS">
+    <meta name="keywords" content="页面被卷去的头部兼容性解决方案, HTML-CSS">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>navigator对象 | Wen&#39;s Blog</title>
+    <title>页面被卷去的头部兼容性解决方案 | Wen&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">navigator对象</h1>
+                    <h1 class="description center-align post-title">页面被卷去的头部兼容性解决方案</h1>
                 </div>
             </div>
         </div>
@@ -442,7 +442,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-09-19
+                    2020-09-20
                 </div>
                 
 
@@ -458,13 +458,20 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="navigator对象"><a href="#navigator对象" class="headerlink" title="navigator对象"></a>navigator对象</h3><p>navigator 对象包含有关浏览器的信息，它有很多属性，我们最常用的是 userAgent，该属性可以返回由客户机发送服务器的 user-agent 头部的值。</p>
-<p>下面前端代码可以判断用户那个终端打开页面，实现跳转</p>
-<pre><code>if((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) &#123;
-    window.location.href = &quot;&quot;;     //手机
- &#125; else &#123;
-    window.location.href = &quot;&quot;;     //电脑
- &#125;</code></pre>
+                <h3 id="页面被卷去的头部兼容性解决方案"><a href="#页面被卷去的头部兼容性解决方案" class="headerlink" title="页面被卷去的头部兼容性解决方案"></a>页面被卷去的头部兼容性解决方案</h3><p>需要注意的是，页面被卷去的头部，有兼容性问题，因此被卷去的头部通常有如下几种写法：</p>
+<ol>
+<li>声明了 DTD，使用 document.documentElement.scrollTop</li>
+<li>未声明 DTD，使用  document.body.scrollTop</li>
+<li>新方法 window.pageYOffset和 window.pageXOffset，IE9 开始支持</li>
+</ol>
+<pre><code>function getScroll() &#123;
+    return &#123;
+      left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft||0,
+      top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+    &#125;;
+ &#125; 
+使用的时候  getScroll().left
+</code></pre>
 
             </div>
             <hr/>
@@ -490,7 +497,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://fate-ui.github.io/2020/0919undefined.html">https://fate-ui.github.io/2020/0919undefined.html</a>
+                    <a href="https://fate-ui.github.io/2020/0920undefined.html">https://fate-ui.github.io/2020/0920undefined.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -693,9 +700,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2020/0920undefined.html">
                     <div class="card-image">
@@ -716,9 +724,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-20
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-20
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -727,6 +735,7 @@
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -737,28 +746,26 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/0909undefined.html">
+                <a href="/2020/0919undefined.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="用一个盒子绘制太极图">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="navigator对象">
                         
-                        <span class="card-title">用一个盒子绘制太极图</span>
+                        <span class="card-title">navigator对象</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            HTML    &lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
-CSS* &#123;
-            padding: 0;
-            margin: 0;
-       
+                            navigator对象navigator 对象包含有关浏览器的信息，它有很多属性，我们最常用的是 userAgent，该属性可以返回由客户机发送服务器的 user-agent 头部的值。
+下面前端代码可以判断用户那个终端打开页面，实现跳转
+
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-09
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-19
                             </span>
                         <span class="publish-author">
                             
